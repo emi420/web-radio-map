@@ -1,0 +1,14 @@
+.mainViewContent {
+    padding: var(--hot-spacing-large);
+}
+
+.trackingBanner {
+    position: fixed;
+    bottom: var(--hot-spacing-large);
+    box-sizing: border-box;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50vw;
+    z-index: 99999;
+    min-width: 400px;
+}

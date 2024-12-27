@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  font-family: var(--hot-font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1.title {
+  font-weight: var(--hot-font-weight-light);
+}
+
+p.body {
+  font-weight: var(--hot-font-weight-medium);
+}
+
+pre {
+  font-family: var(--hot-font-mono);
+}
+
+.debug {
+  background-color: #333;
+  color: #f8f8f8;
+  font-family: var(--hot-font-mono);
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+    height: 100px;
+    overflow-y: scroll;
+}

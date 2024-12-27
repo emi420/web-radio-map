@@ -1,0 +1,10 @@
+.aoi-view--top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mapContainer { 
+    border-radius: 10px;
+}
