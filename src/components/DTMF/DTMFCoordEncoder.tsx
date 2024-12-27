@@ -2,7 +2,7 @@ import DTMFPlayer from "./DTMFPlayer";
 
 function addBBetweenConsecutiveDuplicates(str) {
   return str.split('').map((char, index, arr) => {
-      return char === arr[index - 1] ? `B${char}` : char;
+      return char === arr[index + 1] ? `B${char}` : char;
   }).join('');
 }
 
@@ -30,8 +30,6 @@ const DTMFCoordEncoder = ({latitude, longitude}) => {
     <>
       {(latitude != null && longitude != null) ? 
         <DTMFPlayer
-          toneDuration={200}
-          pauseDuration={50}
           message={encodeDTMF(latitude, longitude)}
         /> : ''}
     </>

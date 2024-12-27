@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-const DTMFPlayer = ({ message, toneDuration = 300, pauseDuration = 100 }) => {
+const DTMFPlayer = ({ message, bigToneDuration = 600, smallToneDuration = 250.0, pauseDuration = 75 }) => {
   const dtmfFrequencies = {
     1: [697, 1209],
     2: [697, 1336],
@@ -51,7 +51,7 @@ const DTMFPlayer = ({ message, toneDuration = 300, pauseDuration = 100 }) => {
     for (const char of message) {
       if (dtmfFrequencies[char]) {
         const [lowFreq, highFreq] = dtmfFrequencies[char];
-        const duration = (char === "#" || char === "*") ? toneDuration * 4 : toneDuration;
+        const duration = (char === "#" || char === "*") ? bigToneDuration : smallToneDuration;
         setTimeout(() => playTone(lowFreq, highFreq, duration), currentTime);
         currentTime += duration + pauseDuration;
       }
@@ -60,7 +60,7 @@ const DTMFPlayer = ({ message, toneDuration = 300, pauseDuration = 100 }) => {
     return () => {
       audioContext.close();
     };
-  }, [message, toneDuration, pauseDuration]);
+  }, [message]);
 
   return null; // No UI rendering
 };
